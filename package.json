@@ -1,10 +1,10 @@
 {
-  "name": "mvsplit-react-examples",
+  "name": "mvstate-react-examples",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "mvsplit": "^0.2.0",
-    "mvsplit-react": "^0.2.3",
+    "mvstate": "^0.1.0",
+    "mvstate-react": "^0.1.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-scripts": "1.0.17"

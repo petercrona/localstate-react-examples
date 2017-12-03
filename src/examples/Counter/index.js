@@ -1,8 +1,8 @@
 import React from 'react';
 import {create, dec, inc} from './Model';
-import observe from 'mvsplit-react';
+import observe from 'mvstate-react';
 
-function Counter({mvsplit: {model, notify}}) {
+function Counter({mvstate: {model, notify}}) {
     return (
         <div>
             <p>
