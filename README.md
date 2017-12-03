@@ -6,10 +6,7 @@ followed by "npm start" and you should have it up and running.
 
 I'd recommend having a look at Counter first. This is kind of the Hello World of Mvstate.
 TicTacToe is a more advanced example to show you a clear separation of view and
-"business" logic.
-
-Next example will most likely be how to share models between multiple complex
-components, and when to introduce new models in a component hierarchy.
+"business" logic. Checkout is an example of a multi-step form.
 
 Cheers,
 Peter
