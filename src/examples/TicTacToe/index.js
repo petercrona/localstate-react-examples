@@ -21,7 +21,7 @@ function TicTacToe({mvstate}) {
             </ul>
 
             {isFinished(model) &&
-             <p>
+             <p className="TicTacToe_Restart">
                  <button onClick={notify(restart)}>Restart</button>
              </p>
             }

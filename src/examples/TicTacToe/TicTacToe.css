@@ -2,18 +2,19 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    width: 600px;
+    width: 500px;
     margin: 0 auto;
 }
 
 .TicTacToe_board li {
-    width: 197px;
-    height: 200px;
+    width: 163px;
+    height: 163px;
     display: inline-block;
     vertical-align: middle;
-    line-height: 200px;
+    line-height: 163px;
     background: #EAEAEA;
     border: 1px solid #000;
+    text-align: center;
 }
 
 .TicTacToe_GameStatus {
@@ -22,4 +23,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.TicTacToe_Restart {
+    text-align: center;
 }
