@@ -8,5 +8,8 @@ I'd recommend having a look at Counter first. This is kind of the Hello World of
 TicTacToe is a more advanced example to show you a clear separation of view and
 "business" logic. Checkout is an example of a multi-step form.
 
+When looking at the examples, pay attention to what kind of code you find in the
+component versus in the model.
+
 Cheers,
 Peter
