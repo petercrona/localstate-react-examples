@@ -1,15 +1,12 @@
 import React from 'react';
 
-import {getFinalModel} from './Model';
+import {getFinalModel, getBillingDetails} from './Model';
 
 export default function ContactDetails({mvstate}) {
     const {model} = mvstate;
 
-    const getValue = model.billingDetails.sameAsContact
-                   ? x => model.contactDetails[x]
-                   : x => model.billingDetails[x];
-
     const alertModel = () => window.alert(JSON.stringify(getFinalModel(model)));
+    const billingDetails = getBillingDetails(model);
 
     return (
         <div className="Checkout_Confirm">
@@ -37,15 +34,15 @@ export default function ContactDetails({mvstate}) {
             <ul>
                 <li>
                     <span>Firstname</span>
-                    <span>{getValue('firstname')}</span>
+                    <span>{billingDetails.firstname}</span>
                 </li>
                 <li>
                     <span>Lastname</span>
-                    <span>{getValue('lastname')}</span>
+                    <span>{billingDetails.lastname}</span>
                 </li>
                 <li>
                     <span>Email</span>
-                    <span>{getValue('email')}</span>
+                    <span>{billingDetails.email}</span>
                 </li>
             </ul>
 
