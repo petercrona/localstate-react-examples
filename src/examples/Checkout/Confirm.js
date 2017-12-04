@@ -2,8 +2,8 @@ import React from 'react';
 
 import {getFinalModel, getBillingDetails} from './Model';
 
-export default function ContactDetails({mvstate}) {
-    const {model} = mvstate;
+export default function ContactDetails({_localstate}) {
+    const {model} = _localstate;
 
     const alertModel = () => window.alert(JSON.stringify(getFinalModel(model)));
     const billingDetails = getBillingDetails(model);

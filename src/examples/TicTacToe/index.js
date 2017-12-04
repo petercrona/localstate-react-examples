@@ -1,13 +1,13 @@
 import React from 'react';
 import {create, isFinished, restart} from './Model';
-import observe from 'mvstate-react';
+import observe from 'localstate-react';
 import {map, range} from 'lodash/fp';
 import './TicTacToe.css';
 import GameStatus from './GameStatus';
 import Cell from './Cell';
 
-function TicTacToe({mvstate}) {
-    const {notify, model} = mvstate;
+function TicTacToe({_localstate}) {
+    const {notify, model} = _localstate;
 
     return (
         <div>
@@ -15,7 +15,7 @@ function TicTacToe({mvstate}) {
 
             <ul className="TicTacToe_board">
                 {map(
-                     x => <Cell key={x} cellId={x} mvstate={mvstate} />,
+                     x => <Cell key={x} cellId={x} _localstate={_localstate} />,
                      range(0, 9)
                  )}
             </ul>

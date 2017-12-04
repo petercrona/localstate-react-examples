@@ -4,8 +4,8 @@ import {setPayment} from './Model';
 
 const getValueAnd = f => compose(f, get('target.value'));
 
-export default function PaymentDetails({mvstate}) {
-    const {notify2, model} = mvstate;
+export default function PaymentDetails({_localstate}) {
+    const {notify2, model} = _localstate;
 
     const handlePaymentMethod = getValueAnd(notify2(setPayment('method')));
 

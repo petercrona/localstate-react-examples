@@ -1,6 +1,6 @@
 import React from 'react';
 import {create, nextStep, prevStep, hasPrevStep, hasNextStep} from './Model';
-import observe from 'mvstate-react';
+import observe from 'localstate-react';
 import ContactDetails from './ContactDetails';
 import BillingDetails from './BillingDetails';
 import PaymentDetails from './PaymentDetails';
@@ -26,8 +26,8 @@ const steps = [
     }
 ];
 
-function Checkout({mvstate}) {
-    const {model, notify} = mvstate;
+function Checkout({_localstate}) {
+    const {model, notify} = _localstate;
 
     const Step = steps[model.step];
     return (
@@ -36,7 +36,7 @@ function Checkout({mvstate}) {
                 <strong>{Step.title}</strong>
             </p>
             <div>
-                <Step.component mvstate={mvstate} />
+                <Step.component _localstate={_localstate} />
             </div>
             <p>
                 <button onClick={notify(prevStep)}

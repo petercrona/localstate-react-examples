@@ -4,8 +4,8 @@ import {setContact} from './Model';
 
 const getValueAnd = f => compose(f, get('target.value'));
 
-export default function ContactDetails({mvstate}) {
-    const {notify2, model} = mvstate;
+export default function ContactDetails({_localstate}) {
+    const {notify2, model} = _localstate;
 
     const handleFirstname = getValueAnd(notify2(setContact('firstname')));
     const handleLastname = getValueAnd(notify2(setContact('lastname')));

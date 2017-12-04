@@ -4,8 +4,8 @@ import {setBilling, getBillingDetails} from './Model';
 
 const getValueAnd = f => compose(f, get('target.value'));
 
-export default function ContactDetails({mvstate}) {
-    const {notify2, model} = mvstate;
+export default function ContactDetails({_localstate}) {
+    const {notify2, model} = _localstate;
 
     const handleSameAsContact = compose(
         notify2(setBilling('sameAsContact')), get('target.checked')

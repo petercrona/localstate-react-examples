@@ -1,8 +1,8 @@
 import React from 'react';
 import {create, dec, inc} from './Model';
-import observe from 'mvstate-react';
+import observe from 'localstate-react';
 
-function Counter({mvstate: {model, notify}}) {
+function Counter({_localstate: {model, notify}}) {
     return (
         <div>
             <p>
