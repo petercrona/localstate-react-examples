@@ -3,15 +3,14 @@ import {get, compose} from 'lodash/fp';
 import {setContact} from './Model';
 
 const getValueAnd = f => compose(f, get('target.value'));
-const execute = x => x();
 
 export default function ContactDetails({mvstate}) {
-    const {notify, model} = mvstate;
+    const {notify2, model} = mvstate;
 
-    const handleFirstname = compose(execute, notify, getValueAnd(setContact('firstname')));
-    const handleLastname = compose(execute, notify, getValueAnd(setContact('lastname')));
-    const handleEmail = compose(execute, notify, getValueAnd(setContact('email')));
-    const handleContactMethod = compose(execute, notify, getValueAnd(setContact('contactMethod')));
+    const handleFirstname = getValueAnd(notify2(setContact('firstname')));
+    const handleLastname = getValueAnd(notify2(setContact('lastname')));
+    const handleEmail = getValueAnd(notify2(setContact('email')));
+    const handleContactMethod = getValueAnd(notify2(setContact('contactMethod')));
 
     return (
         <form className="Checkout_form">
@@ -44,8 +43,8 @@ export default function ContactDetails({mvstate}) {
                     <span>Contact Method</span>
                     <select value={model.contactDetails.contactMethod}
                             onChange={handleContactMethod}>
-                        <option value="pigeon">Pigeon</option>
                         <option value="phone">Phone</option>
+                        <option value="pigeon">Pigeon</option>
                         <option value="email">Email</option>
                     </select>
                 </label>

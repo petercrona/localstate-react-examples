@@ -1,4 +1,4 @@
-import {curry} from 'lodash/fp';
+import {curry, pick} from 'lodash/fp';
 
 export const create = () => ({
     step: 0,
@@ -6,7 +6,7 @@ export const create = () => ({
         firstname: '',
         lastname: '',
         email: '',
-        contactMethod: 'pigeon'
+        contactMethod: 'phone'
     },
     billingDetails: {
         sameAsContact: false,
@@ -48,7 +48,7 @@ export const setPayment = setValue('paymentDetails');
 
 export const getBillingDetails = model => {
     if (model.billingDetails.sameAsContact) {
-        return model.contactDetails;
+        return pick(['firstname', 'lastname', 'email'], model.contactDetails);
     } else {
         return {
             firstname: model.billingDetails.firstname,

@@ -3,11 +3,11 @@ import {get, compose} from 'lodash/fp';
 import {setPayment} from './Model';
 
 const getValueAnd = f => compose(f, get('target.value'));
-const execute = x => x();
 
 export default function PaymentDetails({mvstate}) {
-    const {notify, model} = mvstate;
-    const handlePaymentMethod = compose(execute, notify, getValueAnd(setPayment('method')));
+    const {notify2, model} = mvstate;
+
+    const handlePaymentMethod = getValueAnd(notify2(setPayment('method')));
 
     return (
         <form className="Checkout_form">

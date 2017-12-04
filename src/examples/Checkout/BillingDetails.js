@@ -2,18 +2,17 @@ import React from 'react';
 import {get, compose} from 'lodash/fp';
 import {setBilling, getBillingDetails} from './Model';
 
-const getValueAndChecked = f => compose(f, get('target.checked'))
 const getValueAnd = f => compose(f, get('target.value'));
-const execute = x => x();
 
 export default function ContactDetails({mvstate}) {
-    const {notify, model} = mvstate;
+    const {notify2, model} = mvstate;
 
-    const handleSameAsContact =
-        compose(execute, notify, getValueAndChecked(setBilling('sameAsContact')));
-    const handleFirstname = compose(execute, notify, getValueAnd(setBilling('firstname')));
-    const handleLastname = compose(execute, notify, getValueAnd(setBilling('lastname')));
-    const handleEmail = compose(execute, notify, getValueAnd(setBilling('email')));
+    const handleSameAsContact = compose(
+        notify2(setBilling('sameAsContact')), get('target.checked')
+    );
+    const handleFirstname = getValueAnd(notify2(setBilling('firstname')));
+    const handleLastname = getValueAnd(notify2(setBilling('lastname')));
+    const handleEmail = getValueAnd(notify2(setBilling('email')));
 
     const billingDetails = getBillingDetails(model);
 

@@ -1,10 +1,10 @@
 {
   "name": "mvstate-react-examples",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
-    "mvstate": "^0.1.0",
-    "mvstate-react": "^0.1.0",
+    "mvstate": "^0.1.1",
+    "mvstate-react": "^0.1.1",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-scripts": "1.0.17"
